@@ -1,0 +1,36 @@
+Actividad 2 - Semana 1
+
+4. Identificar las clases que heredan, ¿Qué atributos y métodos heredan?
+
+La clase Triángulo extiende de "FiguraGeometrica", lo que implica que adquiere el atributo nombre y hereda los métodos getNombre(), setNombre(), calcularAreaFigura(), y esRegular(). Estos métodos, en particular los abstractos como "calcularAreaFigura()" y "esRegular()", requieren ser implementados en la subclase Triángulo.
+
+5. Identificar las clases que conforman una composición.
+
+La clase Triángulo mantiene una relación de composición con la clase Punto, dado que un triángulo se forma a partir de tres puntos (punto1, punto2, punto3). De manera similar, la clase "SuperficiePlana" también está compuesta por una lista de "FiguraGeometrica", ya que representa una superficie que agrupa múltiples figuras geométricas.
+
+6. ¿Qué es una superclase y una subclase?
+
+Una superclase es la clase principal de la cual otras clases, conocidas como subclases, obtienen atributos y métodos. Donde, "FiguraGeometrica" actúa como la superclase, mientras que Triángulo es la subclase que deriva de ella. Esto significa que Triángulo hereda los atributos y métodos definidos en "FiguraGeometrica". Además, la subclase tiene la capacidad de extender o modificar la funcionalidad proporcionada por la superclase, lo que le permite adaptar o mejorar el comportamiento original para cumplir con necesidades específicas
+
+7. ¿Por qué usamos abstract?¿Se puede dejar de heredar un método de una clase abstracta?
+
+La palabra clave "abstract" se utiliza para declarar métodos que no poseen implementación en la superclase, lo que fuerza a las subclases a suministrar una implementación específica. No es posible omitir la herencia de un método abstracto; si una subclase deriva de una clase abstracta, está obligada a implementar todos los métodos abstractos, a menos que dicha subclase también sea declarada como abstracta.
+
+8. ¿Qué anotación utilizo para sobreescribir métodos?
+
+Para redefinir métodos de una superclase o interfaz, se emplea la anotación "@Override" en la declaración del método dentro de la subclase. Esta anotación garantiza que el método sobrescribe correctamente uno ya existente, y también sirve para prevenir errores tipográficos o de firma.
+
+9. Los atributos de la clase Figura Geométrica conviértalas en protected. ¿En qué condiciónconvierte a los atributos? ¿Es posible acceder a los atributos protegidos sin utilizar una 
+invocación a super() o sin método get?
+
+Al declarar los atributos de "FiguraGeometrica" como protected, se permite que sean accesibles dentro de la misma clase, por las subclases, y por otras clases del mismo paquete. Esto significa que una subclase puede acceder directamente a estos atributos sin necesidad de utilizar super() o métodos get. Sin embargo, el acceso a estos atributos desde fuera del paquete se restringe, a menos que sea a través de una instancia.
+
+10. ¿Cómo aplicarías polimorfismo?. 
+
+El polimorfismo se aplica cuando una referencia de tipo superclase.Por ejemplo, "FiguraGeometrica" apunta a un objeto de una subclase (por ejemplo, Triangulo). En tiempo de ejecución, la referencia se comporta según la implementación de la subclase, lo que permite tratar diferentes tipos de objetos a través de una interfaz común, como cuando un método puede operar en varias subclases que comparten una superclase común.
+
+
+
+
+
+
