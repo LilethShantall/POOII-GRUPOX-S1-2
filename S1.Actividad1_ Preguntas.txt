@@ -1,0 +1,208 @@
+Actividad 1 - Semana 1 
+
+1. Crear una clase llamada Círculo la cual contiene:
+
+a. Dos variables de instancia privada: radio (de tipo double) y color (de tipo String), 
+con valor por defecto de 12.5 y "azul", respectivamente.
+b. Dos constructores sobrecargados (overloaded): un constructor predeterminado o 
+por default sin argumentos y otro constructor que tiene un argumento de input 
+double para el valor del radio.
+c. Dos métodos públicos: getRadio() y getArea(), que devuelven el radio y el área de 
+esta instancia, respectivamente. Para calcular el área de un círculo, deberás seguir 
+la siguiente fórmula: area = radius*radius*Math.PI
+
+
+Código:
+/**
+ *
+ * @author Lileth
+ */
+public class Circulo {
+//Variable de instancia privadas
+    private double radio= 12.5;
+    private String color= "azul";
+
+    // Constructor por defecto sin argumento
+    public Circulo() {
+    }
+    // Constructor con un argumento
+    public Circulo(double radio) {
+        this.radio = radio;
+    
+    }
+    // Métodos público para obtener el radio del circulo
+    public Circulo(double radio) {
+        return this.radio;
+    }
+    // Método público para obtener el área del circulo
+    public double getArea() {
+        return radio * radio * Math.PI;
+    }
+}
+  
+2. Compilar y ejecutar la clase "Circulo.java". ¿Puedes ejecutar la clase “Circulo.java”? ¿Por qué?
+
+No se puedo ejecutar la clase "Circulo.java" directamente porque la clase "Circulo.java" es una definición de una clase, no es un programa completo que pueda ser ejecutado. Para que este, pueda ser ejecutado en Java debería incluir un método main que sirva como punto de inicio del programa. Lo cual lo primero que se deba hacer crear un objeto de la clase "Circulo" en otro programa que tenga un método main.
+
+3. Crear una clase CirculoTest, esta clase contendrá el método main() para poder visualizar.
+los siguientes datos:
+Utilizando un constructor por defecto para imprimir:
+a. El radio de un círculo.
+b. El área de un círculo. 
+Utilizando un constructor sobrecargado, donde radio es igual a 6.55, para imprimir:
+a. El radio de un círculo.
+b. El área de un círculo. 
+	
+Código:
+
+package s1actividad1;
+
+/**
+ *
+ * @author Lileth
+ */
+public class CirculoTest {
+    public static void main(String[] args) {
+        // Utilizando el constructor por defecto
+        Circulo circulo1 = new Circulo();
+        System.out.println("Radio del círculo 1: " + circulo1.getRadio());
+        System.out.println("Área del círculo 1: " + circulo1.getArea());
+
+        // Utilizando el constructor sobrecargado
+        Circulo circulo2 = new Circulo(6.55);
+        System.out.println("Radio del círculo 2: " + circulo2.getRadio());
+        System.out.println("Área del círculo 2: " + circulo2.getArea());
+ }
+}
+
+¿Qué pasos en común debe realizaste para ejecutar cada uno de los ejercicios? Describir 
+conceptos del paradigma orientada a objetos. 
+
+Para ejecutar los ejercicios, primero se instancia objetos de la clase Circulo utilizando los constructores adecuados, llamar a métodos getRadio()y getArea()  y acceder a propiedades de la clase Circulo. Estos pasos son comunes en el paradigma de programación orientada a objetos, donde se crean objetos que encapsulan datos y comportamientos, y se acceden a ellos a través de métodos y propiedades.
+
+4. Ejecutar la clase “CirculoTest.java” y responde las siguientes preguntas:
+
+a.	¿Qué es el constructor y para qué sirve?
+
+El constructor es una función especial en la programación orientada a objetos diseñada para inicializar nuevos objetos. En el caso de la clase CirculoTest, el constructor se utiliza para inicializar la radio del círculo y se llama automáticamente cuando se crea un objeto de la clase CirculoTest y lo cual tenemos dos constructores: uno por defecto que inicializa la radio con un valor predeterminado de 12.5, y otro sobrecargado que permite pasar un valor de radio como parámetro.
+
+b.	¿Con qué método recupero el radio del círculo?
+Para recuperar el radio del círculo, se utiliza el método getRadio (), este es un método getter que 
+te devuelve el valor almacenado en el atributo radio.
+
+c.	¿Por qué los atributos son privados y los métodos son públicos?
+Los atributos son privados porque son privados porque queremos protegerlos de cambios accidentales desde fuera de la clase y solo así se puede acceder a ellos a través de métodos específicos. Los métodos son públicos porque se quiere permitir que se acceda a la funcionalidad del objeto desde fuera de la clase. 
+
+d. ¿Qué pasa si accedes directamente a los atributos del círculo desde el método 
+main()?
+Si se intenta acceder directamente a los atributos del círculo desde el método main(), el compilador lanzará un error porque los atributos son privados y no se pueden acceder directamente desde fuera de la clase. 
+
+e. ¿Qué pasa si modificas directamente el atributo area del círculo desde el método 
+main()?
+Si se intenta modificar directamente el atributo area del círculo desde el método main (), saldrá un error en el compilador porque el atributo área es privado y solo puede ser accedido desde dentro de la clase CirculoTest. Mejor sería utilizar el método setArea () para modificar el área del círculo de manera segura y controlada.
+
+f. En la clase “CirculoTest.java”, ejecuta la siguiente instrucción: 
+System.out.println(c1. radius), donde c1 es una instancia del objeto Círculo. ¿Qué 
+ocurió? Explique el mensaje de error.
+
+Al ejecutar la instrucción System.out.println(c1.radius) ocurre un error de compilación porque el atributo radius tiene acceso privado y no se puede acceder directamente desde fuera de la clase Circulo, estos solo pueden ser accedidos mediante métodos públicos definidos en la misma clase, como getRadio().
+ 
+g. En la clase “CirculoTest.java”, ejecuta la siguiente instrucción: c1.radius=42.0, 
+donde c1 es una instancia del objeto Círculo. ¿Qué ocurió? Explique el mensaje de error.
+
+Al intentar ejecutar c1.radio = 42.0, se produce el mismo tipo de error de compilación mencionado en la pregunta anterior, lo cual no es posible asignar un valor al atributo radio porque es privado, lo que hace que el valor de radius no pueda modificarse directamente desde fuera de la clase.
+ 
+h. ¿Con qué método modificas el valor de un atributo de la clase “Circulo.java”?
+
+Para modificar el valor de un atributo de la clase Circulo, se utiliza un método setter. En este caso, se utilizará el método setRadius()para modificar el valor del atributo radius.
+Para modificar el valor de un atributo en la clase Circulo, utilizo un método setter. Por ejemplo, si quiero cambiar el valor del radio, tendría un método público llamado setRadio(double nuevoRadio) que permite modificar el atributo radio de manera controlada.
+
+i.	Crear un objeto de tipo Círculo y modifica los valores por defecto. 
+
+Instanciare un objeto de tipo Circulo en la clase CirculoTest y utilizaré los métodos setters para actualizar los valores predeterminados. De esta manera:
+Codigo: 
+public class CirculoTest {
+ public static void main(String[] args) {
+ // Crear un objeto Circulo con valores por defecto 
+Circulo c1 = new Circulo(); 
+// Modificar los valores por defecto utilizando setters 
+c1.setRadio(15.0); 
+c1.setColor("rojo"); 
+System.out.println("Radio modificado: " + c1.getRadio()); 
+System.out.println("Color modificado: " + c1.getColor()); } }
+}
+}
+
+j. ¿Para qué sirve la palabra reservada “this”?. Modifique el constructor con 
+argumentos (radio y color) y utiliza “this” y métodos setters en la clase “Circulo.java”.
+
+Cuando estás ejecutando el código, el uso de this es especialmente útil si el nombre de un parámetro es igual al nombre de un atributo de instancia. En este caso, this permite distinguir claramente entre ambos. Al utilizar this, puedes asegurarte de que los atributos del objeto se inicialicen correctamente con los valores que se pasan como parámetros al constructor o método. De esta manera:
+Código:
+
+public class Circulo {
+    private double radius;
+    private String color;
+
+    public Circulo(double radius, String color) {
+        this.radius = radius;
+        this.color = color;
+    }
+    public double getRadius() {
+        return radius;
+    }
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+    public String getColor() {
+        return color;
+    }
+    public void setColor(String color) {
+        this.color = color;
+    }
+}
+
+k. ¿Para qué sirve el método toString()?
+
+El método toString() sirve para obtener una versión en texto del objeto. Esto resulta útil cuando quieres imprimir la información del objeto de manera entendible.
+
+l. Incluir el método toString() en la clase “Circulo.java”. 
+Código:
+public class Circulo {
+    private double radio;
+    private String color;
+
+    public Circulo() {
+        this(12.5, "azul");
+    }
+    public Circulo(double radio) {
+        this(radio, "azul");
+    }
+    private Circulo(double radio, String color) {
+        this.setRadio(radio);
+        this.setColor(color);
+    }
+
+    public double getRadio() {
+        return this.radio;
+    }
+
+    public void setRadio(double radio) {
+        this.radio = radio;
+    }
+
+    public String getColor() {
+        return this.color;
+    }
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public double getArea() {
+        return this.radio * this.radio * Math.PI;
+    }
+    @Override
+    public String toString() {
+        return "Círculo [radio=" + radio + ", color=" + color + ", área=" + getArea() + "]";
+    }
+}
+
